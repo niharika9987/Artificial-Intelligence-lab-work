@@ -1,11 +1,11 @@
-Lab 1 work 
-1)8-Puzzle Problem Solver (DFS and BFS)
+Lab 1 work date 5/08/2025
 
-This project provides C++ implementations of **Depth-First Search (DFS)** and **Breadth-First Search (BFS)** algorithms to solve the classical **8-puzzle problem**.
+8-Puzzle Problem Solver (DFS and BFS)
 
----
+These files provide C++ implementations of Depth-First Search and Breadth-First Search algorithms to solve the 8-puzzle problem.
 
-2) Aim
+
+1) Aim
 
 The aim of this project is to:
 - Solve the 8-puzzle problem using two search strategies: DFS and BFS.
