@@ -35,7 +35,7 @@ If open list becomes empty → no path exists.
 
 Heuristic Used
 Octile Distance (suitable for grids allowing diagonal movement):
-ℎ = max(Δ𝑥,Δ𝑦)+(2−1)×min⁡(Δ𝑥,Δ𝑦) Where:Δ𝑥=∣𝑥𝑐𝑢𝑟𝑟𝑒𝑛𝑡−𝑥𝑔𝑜𝑎𝑙∣Δx=∣xcurrent−xgoal∣   Δ𝑦=∣𝑦𝑐𝑢𝑟𝑟𝑒𝑛𝑡−𝑦𝑔𝑜a𝑙∣
+ℎ = max(Δ𝑥,Δ𝑦)+(2−1)×min⁡(Δ𝑥,Δ𝑦) Where:Δ𝑥=∣𝑥𝑐𝑢𝑟𝑟𝑒𝑛𝑡−𝑥𝑔𝑜𝑎𝑙∣    Δ𝑦=∣𝑦𝑐𝑢𝑟𝑟𝑒𝑛𝑡−𝑦𝑔𝑜a𝑙∣
 
 Time Complexity Analysis
 Let V = number of vertices (grid cells)
