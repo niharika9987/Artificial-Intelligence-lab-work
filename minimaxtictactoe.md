@@ -1,4 +1,5 @@
 Tic-Tac-Toe (Player vs Computer)
+
 AIM- To implement a Tic-Tac-Toe game in C++ where it implements this game by minimax algorithm ensuring it never loses.User can choose which symbol he wants to use.The computer makes its moves using the Minimax algorithm, ensuring it never loses.
 
 Algorithm (Minimax)
