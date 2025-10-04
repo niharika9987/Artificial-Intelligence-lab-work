@@ -1,6 +1,7 @@
 Blocks World Problem
 
-Objective
+Objective:
+
 The Blocks World Problem is a classic problem in Artificial Intelligence (AI) and Cognitive Science.
 We are given a set of blocks placed on a table, stacked in various configurations.
 The goal is to transform the initial state of the blocks into a desired goal state using valid moves (such as picking up, putting down, stacking, and unstacking).
