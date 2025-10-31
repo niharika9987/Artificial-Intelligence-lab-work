@@ -1,29 +1,50 @@
-Tic-Tac-Toe (Player vs Computer)
+## Tic-Tac-Toe (Player vs Computer)
 
-AIM- To implement a Tic-Tac-Toe game in C++ where it implements this game by minimax algorithm ensuring it never loses.User can choose which symbol he wants to use.The computer makes its moves using the Minimax algorithm, ensuring it never loses.
+### Aim
+To implement a Tic-Tac-Toe game in C++ that uses the Minimax algorithm, ensuring the computer never loses.  
+The user can choose their symbol (X or O), and the computer will always make the optimal move.
 
-Algorithm (Minimax)
-1)Initialize board → 3x3 grid with positions 1–9.
+---
 
-2)Player move → User chooses a cell number (1–9).
+### Algorithm (Minimax)
 
-3)Computer move → Use Minimax to choose the best move:
-   If the computer can win → choose that move.
-   
-   If the player is about to win → block them.
-   
-   Otherwise → pick the move that maximizes computer’s chance of winning.
-6)Check winner or draw → After each move.
+1. Initialize the board → 3×3 grid with positions numbered 1–9.
+2. Player move → The user selects a cell number (1–9).
+3. Computer move → Use the Minimax algorithm to determine the best possible move:
+   - If the computer can win → choose that move.
+   - If the player is about to win → block that move.
+   - Otherwise → choose the move that maximizes the computer’s chance of winning.
+4. Check for winner or draw after each move.
+5. Repeat until the game ends → either a win or a draw occurs.
 
-Repeat until game ends → Either someone wins or the board is full.
+---
 
-Time Complexity
-Minimax explores all possible game states. Max possible states in Tic-Tac-Toe = 9! = 362,880.
+### Working Principle of Minimax
+- Minimax simulates all possible moves from the current state.
+- The computer assumes that the player will always play optimally.
+- It assigns a score to terminal states:
+  - +10 if the computer wins.
+  - -10 if the player wins.
+  - 0 for a draw.
+- The algorithm recursively backtracks and selects the move that maximizes the computer’s score and minimizes the opponent’s.
 
-For each move, Minimax recursively explores remaining states.
+---
 
-Worst-case time complexity: 𝑂(𝑏𝑑)=𝑂(9!)≈362,880 O(bd)=O(9!)≈362,880
+### Time Complexity
 
-where b = branching factor, d = depth of tree.
+- Tic-Tac-Toe has a maximum of 9! = 362,880 possible states.
+- For each move, Minimax recursively explores remaining possibilities.
 
-Since Tic-Tac-Toe is small, the algorithm runs instantly.
+Worst-case time complexity:  
+O(b^d) = O(9!) ≈ 362,880  
+
+where  
+b = branching factor (number of possible moves),  
+d = depth of the game tree.
+
+Since the search space is small, the Minimax algorithm runs efficiently for Tic-Tac-Toe.
+
+---
+
+### Space Complexity
+O(b × d) for the recursive call stack and board copies, which is manageable for a 3×3 grid.
