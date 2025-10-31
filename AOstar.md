@@ -1,55 +1,64 @@
-AO* ALGORITHM
+## AO* Algorithm
 
-Aim
-The aim of this program is to implement the AO* (And-Or Star) algorithm on a 2D grid for pathfinding. The algorithm finds an optimal path from a start cell to a goal cell, considering obstacles and possible diagonal movements. AO* is particularly suitable for problems represented as AND–OR graphs, where some moves may require solving multiple sub-tasks (AND) or selecting among alternatives (OR).
+### Aim
+The aim of this program is to implement the AO* (And-Or Star) algorithm on a 2D grid for pathfinding.  
+The algorithm finds an optimal path from a start cell to a goal cell, considering obstacles and diagonal movements.  
+AO* is particularly suitable for problems represented as AND–OR graphs, where some moves may require solving multiple sub-tasks (AND) or selecting among alternatives (OR).
 
-Algorithm
-The AO* algorithm works as follows:
-Representation:
-Each cell in the grid is considered a state/node.Neighbors of a node can be OR successors (choose one path) or AND successors (all must be traversed).Obstacles are blocked nodes and cannot be traversed.
-Heuristic Function:
-We use Manhattan distance or Octile distance as the heuristic ℎ(𝑛) 
-h(n) is to estimate the cost from a node to the goal.
-Steps
-Start from the initial node.
-Expand successors (children) of the current node.
-For OR nodes, propagate the minimum estimated cost 
-𝑓=𝑔+ℎ from children to the parent.
-For AND nodes, propagate the sum of child costs.
-Repeat recursively until the goal node is solved.
-The minimal cost path is computed from start to goal.
+---
 
-Time Complexity
-Worst Case: 𝑂(𝑏𝑛)O(bn), where:
-𝑏 = branching factor (number of children per node)
-𝑛 = maximum depth of the search tree
-AO* may explore fewer nodes than naive exhaustive search because it prunes nodes using heuristics.
+### Algorithm
 
-Space Complexity
-Worst Case:𝑂(𝑏𝑛) , due to storage of:
-All generated nodes/states
-Heuristic values
-Child pointers and visited tracking
-Optimizations like storing only active paths can reduce memory usage.
+#### Representation
+- Each cell in the grid is considered a **state/node**.
+- Neighbors of a node can be **OR successors** (choose one path) or **AND successors** (all must be traversed).
+- Obstacles are **blocked nodes** and cannot be traversed.
 
-Use Cases
+#### Heuristic Function
+- The algorithm uses **Manhattan Distance** or **Octile Distance** as the heuristic `h(n)`.
+- `h(n)` estimates the cost from a node to the goal.
 
-Grid-Based Pathfinding / Robotics
+#### Steps
 
-Navigating robots or characters in a 2D map with obstacles.
+1. Start from the **initial node**.  
+2. Expand successors (children) of the current node.  
+3. For **OR nodes**, propagate the **minimum estimated cost** `f = g + h` from children to the parent.  
+4. For **AND nodes**, propagate the **sum of child costs**.  
+5. Repeat recursively until the goal node is solved.  
+6. The minimal cost path is computed from start to goal.  
 
-Optimal path selection considering multiple sub-tasks.
+---
 
-Problem Reduction in AI
+### Time Complexity
+**Worst Case:** `O(b^n)`  
+where:  
+- `b` = branching factor (number of children per node)  
+- `n` = maximum depth of the search tree  
 
-Decomposing complex problems into AND–OR graphs.
+AO* may explore fewer nodes than a naive exhaustive search because it **prunes nodes using heuristics**.
 
-Game Trees / Strategy Games
+---
 
-Decision making where a move may require handling multiple opponent responses.
+### Space Complexity
+**Worst Case:** `O(b^n)`  
+Memory is required to store:
+- All generated nodes/states  
+- Heuristic values  
+- Child pointers and visited tracking  
 
-Planning and Diagnosis Systems
+Optimizations such as storing only **active paths** can reduce memory usage.
 
-Task planning in robotics or workflow optimization.
+---
 
-Fault diagnosis where certain conditions must all be verified (AND nodes) or alternative paths can be chosen (OR nodes).
+### Use Cases
+
+#### 1. Grid-Based Pathfinding / Robotics
+- Navigation of robots or agents in 2D maps with obstacles.  
+- Optimal path selection when multiple sub-tasks must be solved.
+#### 2. Problem Reduction in AI
+- Decomposing complex problems into **AND–OR** graphs for structured problem solving.
+#### 3. Game Trees / Strategy Games
+- Decision-making where moves require handling multiple opponent responses.
+#### 4. Planning and Diagnosis Systems
+- Task planning in robotics and workflow optimization.  
+- Fault diagnosis where certain conditions must all be verified (**AND nodes**) or alternatives can be chosen (**OR nodes**).
